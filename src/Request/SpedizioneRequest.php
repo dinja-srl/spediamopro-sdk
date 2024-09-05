@@ -114,6 +114,11 @@ class SpedizioneRequest extends BaseRequest
      */
     private $consigneePickupPointId;
 
+    /**
+     * @var int
+     */
+    private $labelFormat;
+
     public function call($debug = FALSE, $id = null)
     {
         return new SpedizioneResponse(parent::call($debug, $id));
@@ -149,6 +154,7 @@ class SpedizioneRequest extends BaseRequest
                 'importoContrassegno' => $this->importoContrassegno,
                 'importoAssicurazione' => $this->importoAssicurazione,
                 'consigneePickupPointId' => $this->consigneePickupPointId,
+                'labelFormat' => $this->labelFormat,
                 'colli' => $declaredArr], function ($v) { return !is_null($v); })
         ], function ($v) {
             return !is_null($v);
@@ -604,6 +610,30 @@ class SpedizioneRequest extends BaseRequest
     public function setConsigneePickupPointId(string $consigneePickupPointId)
     {
         $this->consigneePickupPointId = $consigneePickupPointId;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of labelFormat
+     *
+     * @return  int
+     */ 
+    public function getLabelFormat()
+    {
+        return $this->labelFormat;
+    }
+
+    /**
+     * Set the value of labelFormat
+     *
+     * @param  int  $labelFormat
+     *
+     * @return  self
+     */ 
+    public function setLabelFormat(int $labelFormat)
+    {
+        $this->labelFormat = $labelFormat;
 
         return $this;
     }

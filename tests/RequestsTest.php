@@ -14,8 +14,8 @@ use PHPUnit\Framework\TestCase;
 
 class RequestsTest extends TestCase
 {
-    const spediamopro_api_authcode = "171750720530B8DB90912230E2DDB3BCB63DEC50B2";
-    const debug = false;
+    const spediamopro_api_authcode = "";
+    const debug = true;
 
     public function testHasCorrectStructure()
     {
@@ -67,7 +67,7 @@ class RequestsTest extends TestCase
         $request = new SpedizioneRequest(self::spediamopro_api_authcode, self::debug);
         $idSpedizione = -1;
         foreach ($response->getSpedizioni() as $spedizione) {
-            if($spedizione->getTariffCode() == "BRTEXP") {
+            if($spedizione->getTariffCode() == "UPSSTD") {
                 $idSpedizione = $spedizione->getId();
             }
         }
@@ -101,6 +101,7 @@ class RequestsTest extends TestCase
             ->setConsigneeAddressLine1("Via Roma 1")
             ->setTelefonoDestinatario("0803009954")
             ->setNoteDestinatario("TEST")
+            ->setLabelFormat(1)
             ->setEmailDestinatario("info@sellengine.it");
 
         $response = $request->call(self::debug, $response->getSpedizione()->getId());

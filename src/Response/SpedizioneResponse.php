@@ -92,7 +92,8 @@ class SpedizioneResponse extends BaseResponse
                             isset($value->senderAddressLine3)?$value->senderAddressLine3:null,
                             $value->consigneeAddressLine1,
                             isset($value->consigneeAddressLine2)?$value->consigneeAddressLine2:null,
-                            isset($value->consigneeAddressLine3)?$value->consigneeAddressLine3:null
+                            isset($value->consigneeAddressLine3)?$value->consigneeAddressLine3:null,
+                            isset($value->labelFormat)?$value->labelFormat:null
                         );
                         $value = $spedizione;
                         break;

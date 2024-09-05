@@ -202,7 +202,13 @@ class Spedizione
      */
     private $consigneeAddressLine3;
 
-    public function __construct($corriere, $tariffCode, $tariffLabel, $tariffImage, $ivaEsclusa, $dataRitiroIT, $dataConsegnaPrevistaIT, $id, $nazioneMittente, $nazioneDestinatario, $codice, $numeroColli, $capMittente, $capDestinatario, $tariffa, $tariffaBase, $supplementoCarburante, $serviziAccessori, $iva, $violations, $dataRitiro, $dataConsegnaPrevista, $comuneMittente, $comuneDestinatario, $provinciaMittente, $provinciaDestinatario, $colli, $senderAddressLine1, $senderAddressLine2, $senderAddressLine3, $consigneeAddressLine1, $consigneeAddressLine2, $consigneeAddressLine3)
+    /**
+     *
+     * @var int
+     */
+    private $labelFormat;
+
+    public function __construct($corriere, $tariffCode, $tariffLabel, $tariffImage, $ivaEsclusa, $dataRitiroIT, $dataConsegnaPrevistaIT, $id, $nazioneMittente, $nazioneDestinatario, $codice, $numeroColli, $capMittente, $capDestinatario, $tariffa, $tariffaBase, $supplementoCarburante, $serviziAccessori, $iva, $violations, $dataRitiro, $dataConsegnaPrevista, $comuneMittente, $comuneDestinatario, $provinciaMittente, $provinciaDestinatario, $colli, $senderAddressLine1, $senderAddressLine2, $senderAddressLine3, $consigneeAddressLine1, $consigneeAddressLine2, $consigneeAddressLine3, $labelFormat)
     {
         $this->corriere = $corriere;
         $this->tariffCode = $tariffCode;
@@ -237,6 +243,7 @@ class Spedizione
         $this->consigneeAddressLine1 = $consigneeAddressLine1;
         $this->consigneeAddressLine2 = $consigneeAddressLine2;
         $this->consigneeAddressLine3 = $consigneeAddressLine3;
+        $this->labelFormat = $labelFormat;
     }
 
     /**
@@ -1027,6 +1034,30 @@ class Spedizione
     public function setConsigneeAddressLine3(string $consigneeAddressLine3)
     {
         $this->consigneeAddressLine3 = $consigneeAddressLine3;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of labelFormat
+     *
+     * @return  int
+     */ 
+    public function getLabelFormat()
+    {
+        return $this->labelFormat;
+    }
+
+    /**
+     * Set the value of labelFormat
+     *
+     * @param  int  $labelFormat
+     *
+     * @return  self
+     */ 
+    public function setLabelFormat(int $labelFormat)
+    {
+        $this->labelFormat = $labelFormat;
 
         return $this;
     }

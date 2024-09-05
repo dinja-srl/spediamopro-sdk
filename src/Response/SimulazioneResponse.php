@@ -73,7 +73,8 @@ class SimulazioneResponse extends BaseResponse
                                 $arrvalue->senderAddressLine3,
                                 $arrvalue->consigneeAddressLine1,
                                 $arrvalue->consigneeAddressLine2,
-                                $arrvalue->consigneeAddressLine3
+                                $arrvalue->consigneeAddressLine3,
+                                null
                             );
                             array_push($values, $spedizione);
                         }

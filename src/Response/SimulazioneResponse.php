@@ -33,7 +33,7 @@ class SimulazioneResponse extends BaseResponse
 
     public function __construct($response)
     {
-        echo "RESPONSE: " . json_encode($response);
+        $this->message = $response;
         foreach ($response->simulazione as $key => $value) {
             if (property_exists($this, $key)) {
                 switch ($key) {
@@ -74,7 +74,8 @@ class SimulazioneResponse extends BaseResponse
                                 $arrvalue->consigneeAddressLine1,
                                 $arrvalue->consigneeAddressLine2,
                                 $arrvalue->consigneeAddressLine3,
-                                null
+                                null,
+                                isset($arrvalue->stato)?$arrvalue->stato:null
                             );
                             array_push($values, $spedizione);
                         }

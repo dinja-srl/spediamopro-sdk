@@ -22,7 +22,6 @@ class BaseResponse
 
     public function __construct($response)
     {
-        echo json_encode($response);
         foreach ($response as $key => $value) {
             if (property_exists($this, $key)) {
                 switch ($key) {

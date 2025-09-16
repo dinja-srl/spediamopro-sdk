@@ -208,7 +208,13 @@ class Spedizione
      */
     private $labelFormat;
 
-    public function __construct($corriere, $tariffCode, $tariffLabel, $tariffImage, $ivaEsclusa, $dataRitiroIT, $dataConsegnaPrevistaIT, $id, $nazioneMittente, $nazioneDestinatario, $codice, $numeroColli, $capMittente, $capDestinatario, $tariffa, $tariffaBase, $supplementoCarburante, $serviziAccessori, $iva, $violations, $dataRitiro, $dataConsegnaPrevista, $comuneMittente, $comuneDestinatario, $provinciaMittente, $provinciaDestinatario, $colli, $senderAddressLine1, $senderAddressLine2, $senderAddressLine3, $consigneeAddressLine1, $consigneeAddressLine2, $consigneeAddressLine3, $labelFormat)
+    /**
+     *
+     * @var int
+     */
+    private $stato;
+
+    public function __construct($corriere, $tariffCode, $tariffLabel, $tariffImage, $ivaEsclusa, $dataRitiroIT, $dataConsegnaPrevistaIT, $id, $nazioneMittente, $nazioneDestinatario, $codice, $numeroColli, $capMittente, $capDestinatario, $tariffa, $tariffaBase, $supplementoCarburante, $serviziAccessori, $iva, $violations, $dataRitiro, $dataConsegnaPrevista, $comuneMittente, $comuneDestinatario, $provinciaMittente, $provinciaDestinatario, $colli, $senderAddressLine1, $senderAddressLine2, $senderAddressLine3, $consigneeAddressLine1, $consigneeAddressLine2, $consigneeAddressLine3, $labelFormat, $stato)
     {
         $this->corriere = $corriere;
         $this->tariffCode = $tariffCode;
@@ -244,6 +250,7 @@ class Spedizione
         $this->consigneeAddressLine2 = $consigneeAddressLine2;
         $this->consigneeAddressLine3 = $consigneeAddressLine3;
         $this->labelFormat = $labelFormat;
+        $this->stato = $stato;
     }
 
     /**
@@ -1058,6 +1065,30 @@ class Spedizione
     public function setLabelFormat(int $labelFormat)
     {
         $this->labelFormat = $labelFormat;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of stato
+     *
+     * @return  int
+     */ 
+    public function getStato()
+    {
+        return $this->stato;
+    }
+
+    /**
+     * Set the value of stato
+     *
+     * @param  int  $stato
+     *
+     * @return  self
+     */ 
+    public function setStato(int $stato)
+    {
+        $this->stato = $stato;
 
         return $this;
     }

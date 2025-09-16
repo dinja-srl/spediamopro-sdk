@@ -38,7 +38,6 @@ class SpedizioneResponse extends BaseResponse
 
     public function __construct($response)
     {
-        echo "RESPONSE: " . json_encode($response);
         foreach ($response as $key => $value) {
             if (property_exists($this, $key)) {
                 switch ($key) {
@@ -65,7 +64,7 @@ class SpedizioneResponse extends BaseResponse
                             $value->tariffLabel,
                             $value->tariffImage,
                             isset($value->ivaEsclusa)?$value->ivaEsclusa:null,
-                            $value->dataRitiroIT,
+                            isset($value->dataRitiroIT)?$value->dataRitiroIT:null,
                             $value->dataConsegnaPrevistaIT,
                             $value->id,
                             $value->nazioneMittente,
@@ -93,7 +92,8 @@ class SpedizioneResponse extends BaseResponse
                             $value->consigneeAddressLine1,
                             isset($value->consigneeAddressLine2)?$value->consigneeAddressLine2:null,
                             isset($value->consigneeAddressLine3)?$value->consigneeAddressLine3:null,
-                            isset($value->labelFormat)?$value->labelFormat:null
+                            isset($value->labelFormat)?$value->labelFormat:null,
+                            $value->stato
                         );
                         $value = $spedizione;
                         break;

@@ -17,7 +17,6 @@ class SimulazioneRequest extends BaseRequest
         'cittaMittente',
         'cittaDestinatario',
         'provinciaMittente',
-        'provinciaDestinatario',
         'colli'
     ];
 

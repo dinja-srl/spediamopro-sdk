@@ -66,7 +66,7 @@ class SimulazioneResponse extends BaseResponse
                                 $arrvalue->comuneMittente,
                                 $arrvalue->comuneDestinatario,
                                 $arrvalue->provinciaMittente,
-                                $arrvalue->provinciaDestinatario,
+                                isset($arrvalue->provinciaDestinatario)?$arrvalue->provinciaDestinatario:null,
                                 $arrvalue->colli,
                                 $arrvalue->senderAddressLine1,
                                 $arrvalue->senderAddressLine2,

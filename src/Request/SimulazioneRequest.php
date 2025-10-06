@@ -74,8 +74,8 @@ class SimulazioneRequest extends BaseRequest
         foreach($this->colli as $declaredObj) {
             array_push($declaredArr, $declaredObj->toArray());
         }
-        return array_filter([
-            array_filter([
+        return [
+            [
                 'nazioneMittente' => $this->nazioneMittente,
                 'nazioneDestinatario' => $this->nazioneDestinatario,
                 'capMittente' => $this->capMittente,
@@ -84,10 +84,9 @@ class SimulazioneRequest extends BaseRequest
                 'cittaDestinatario' => $this->cittaDestinatario,
                 'provinciaMittente' => $this->provinciaMittente,
                 'provinciaDestinatario' => $this->provinciaDestinatario,
-                'colli' => $declaredArr], function ($v) { return !is_null($v); })
-        ], function ($v) {
-            return !is_null($v);
-        });
+                'colli' => $declaredArr
+            ]
+        ];
     }
 
     /**

@@ -84,7 +84,7 @@ class SpedizioneResponse extends BaseResponse
                             $value->comuneMittente,
                             $value->comuneDestinatario,
                             $value->provinciaMittente,
-                            $value->provinciaDestinatario,
+                            isset($value->provinciaDestinatario)?$value->provinciaDestinatario:null,
                             $colli,
                             isset($value->senderAddressLine1)?$value->senderAddressLine1:null,
                             isset($value->senderAddressLine2)?$value->senderAddressLine2:null,

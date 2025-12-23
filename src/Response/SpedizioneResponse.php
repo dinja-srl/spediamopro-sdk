@@ -50,7 +50,7 @@ class SpedizioneResponse extends BaseResponse
                                     $collivalue->altezza,
                                     $collivalue->profondita,
                                     $collivalue->larghezza,
-                                    $collivalue->packagingType,
+                                    isset($collivalue->packagingType)?$collivalue->packagingType:null,
                                     isset($collivalue->filenameEtichetta)?$collivalue->filenameEtichetta:null,
                                     isset($collivalue->tracking)?$collivalue->tracking:null,
                                     isset($collivalue->segnacollo)?$collivalue->segnacollo:null

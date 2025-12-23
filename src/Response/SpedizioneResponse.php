@@ -64,7 +64,7 @@ class SpedizioneResponse extends BaseResponse
                             isset($value->tariffLabel)?$value->tariffLabel:null,
                             isset($value->tariffImage)?$value->tariffImage:null,
                             isset($value->ivaEsclusa)?$value->ivaEsclusa:null,
-                            $value->dataRitiroIT,
+                            isset($value->dataRitiroIT)?$value->dataRitiroIT:null,
                             $value->dataConsegnaPrevistaIT,
                             $value->id,
                             $value->nazioneMittente,

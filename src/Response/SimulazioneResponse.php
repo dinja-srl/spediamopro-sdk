@@ -46,7 +46,7 @@ class SimulazioneResponse extends BaseResponse
                                 isset($arrvalue->tariffLabel)?$arrvalue->tariffLabel:null,
                                 isset($arrvalue->tariffImage)?$arrvalue->tariffImage:null,
                                 isset($arrvalue->ivaEsclusa)?$arrvalue->ivaEsclusa:null,
-                                $arrvalue->dataRitiroIT,
+                                isset($arrvalue->dataRitiroIT)?$arrvalue->dataRitiroIT:null,
                                 $arrvalue->dataConsegnaPrevistaIT,
                                 $arrvalue->id,
                                 $arrvalue->nazioneMittente,
